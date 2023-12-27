@@ -1,8 +1,8 @@
 let modInfo = {
-	name: "The ??? Tree",
-	id: "mymod",
-	author: "nobody",
-	pointsName: "points",
+	name: "The Tree of Knowledge",
+	id: "hylic",
+	author: "Hermes",
+	pointsName: "Aether",
 	modFiles: ["layers.js", "tree.js"],
 
 	discordName: "",
@@ -14,7 +14,7 @@ let modInfo = {
 // Set your version in num and name
 let VERSION = {
 	num: "0.0",
-	name: "Literally nothing",
+	name: "The Beginning",
 }
 
 let changelog = `<h1>Changelog:</h1><br>
@@ -43,6 +43,8 @@ function getPointGen() {
 		return new Decimal(0)
 
 	let gain = new Decimal(1)
+	if (hasUpgrade('p', 11))gain = gain.times(2)
+	if (hasUpgrade('p', 12))gain = gain.times(4)
 	return gain
 }
 
